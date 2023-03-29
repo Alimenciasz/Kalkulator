@@ -1,0 +1,65 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            
+
+                Console.WriteLine("Prosty kalkulator");
+
+                Console.Write("Podaj pierwszą liczbę: ");
+                double num1 = Convert.ToDouble(Console.ReadLine());
+
+                Console.Write("Podaj drugą liczbę: ");
+                double num2 = Convert.ToDouble(Console.ReadLine());
+
+                Console.Write("Wybierz operację (+, -, *, /): ");
+                string op = Console.ReadLine();
+
+                double result = 0;
+
+                switch (op)
+                {
+                    case "+":
+                        result = num1 + num2;
+                        break;
+                    case "-":
+                        result = num1 - num2;
+                        break;
+                    case "*":
+                        result = num1 * num2;
+                        break;
+                    case "/":
+                        if (num2 == 0)
+                        {
+                            Console.WriteLine("Nie można dzielić przez zero!");
+                        }
+                        else
+                        {
+                            result = num1 / num2;
+                        }
+                        break;
+                    default:
+                        Console.WriteLine("Nieznana operacja!");
+                        break;
+                }
+
+                if (op != "/")
+                {
+                    Console.WriteLine(num1 + " " + op + " " + num2 + " = " + result);
+                }
+
+                Console.WriteLine("Naciśnij dowolny klawisz, aby zakończyć...");
+                Console.ReadKey();
+            }
+        }
+    }
+    
+
